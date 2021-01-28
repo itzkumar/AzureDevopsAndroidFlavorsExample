@@ -30,7 +30,7 @@ jobs:
       - template: "azure_vars/B_vars.yml"
     steps:
       - template: build-template.yml
-      - template: publish_apks.yml
+#      - template: publish_apks.yml
   - job: C
     pool:
       vmImage: 'macos-latest'
