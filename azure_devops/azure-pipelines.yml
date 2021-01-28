@@ -39,4 +39,4 @@ jobs:
       - template: "azure_vars/C_vars.yml"
     steps:
       - template: build-template.yml
-      - template: publish_apks.yml
+#      - template: publish_apks.yml
