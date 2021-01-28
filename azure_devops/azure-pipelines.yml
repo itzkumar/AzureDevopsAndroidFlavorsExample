@@ -21,7 +21,7 @@ jobs:
           unit_tests: false
           gradle_task: "connectedRedStagingProductADebugAndroidTest"
       - template: build-template.yml
-      - template: publish_apks.yml
+#      - template: publish_apks.yml
   - job: B
     pool:
       vmImage: 'macos-latest'
