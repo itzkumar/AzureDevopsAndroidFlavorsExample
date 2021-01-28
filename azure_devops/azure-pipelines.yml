@@ -8,19 +8,19 @@ trigger:
   - master
 
 jobs:
-  - job: A
-    pool:
-      vmImage: 'macos-latest'
-    variables:
-      - group: "A"
-      - template: "azure_vars/A_vars.yml"
-    steps:
-      - template: install_emulator.yml
-      - template: build-template.yml
-        parameters:
-          unit_tests: false
-          gradle_task: "connectedRedStagingProductADebugAndroidTest"
-      - template: build-template.yml
+#  - job: A
+#    pool:
+#      vmImage: 'macos-latest'
+#    variables:
+#      - group: "A"
+#      - template: "azure_vars/A_vars.yml"
+#    steps:
+#      - template: install_emulator.yml
+#      - template: build-template.yml
+#        parameters:
+#          unit_tests: false
+#          gradle_task: "connectedRedStagingProductADebugAndroidTest"
+#      - template: build-template.yml
 #      - template: publish_apks.yml
   - job: B
     pool:
@@ -30,13 +30,13 @@ jobs:
       - template: "azure_vars/B_vars.yml"
     steps:
       - template: build-template.yml
-#      - template: publish_apks.yml
-  - job: C
-    pool:
-      vmImage: 'macos-latest'
-    variables:
-      - group: "C"
-      - template: "azure_vars/C_vars.yml"
-    steps:
-      - template: build-template.yml
+      - template: publish_apks.yml
+#  - job: C
+#    pool:
+#      vmImage: 'macos-latest'
+#    variables:
+#      - group: "C"
+#      - template: "azure_vars/C_vars.yml"
+#    steps:
+#      - template: build-template.yml
 #      - template: publish_apks.yml
